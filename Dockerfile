@@ -23,7 +23,7 @@ WORKDIR /opt
 # * make image more compact:
 #   strip binary files, remove *.o files
 # * download api.ai model
-RUN git clone https://github.com/kaldi-asr/kaldi.git && \
+RUN git clone https://github.com/aospan/kaldi.git && \
   sudo ln -s -f bash /bin/sh && \
   cd kaldi/tools/ && make -j"$(nproc)" && \
   cd ../src && ./configure --shared && \
