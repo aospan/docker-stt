@@ -30,7 +30,7 @@ RUN git clone https://github.com/aospan/kaldi.git && \
   make depend -j"$(nproc)" && make -j"$(nproc)" && \
   find /opt/kaldi/ -name "*.o" -exec rm -f {} \; && \
   find /opt/kaldi/ -type f -perm +100 -exec strip {} \; 2>/dev/null && \
-  find /opt/kaldi/ -name "*.a" -exec strip {} \; 2>/dev/null && \
+  find /opt/kaldi/ -name "*.a" -exec rm {} \; 2>/dev/null && \
   find /opt/kaldi/ -name "*.so" -exec strip {} \; 2>/dev/null && \
   cd /opt/kaldi/egs/apiai_decode/s5 && ./download-model.sh
 
