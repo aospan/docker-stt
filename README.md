@@ -15,7 +15,7 @@ file in.wav will be processed and output should contain following text:
 ```
 /opt/in/in.wav HELLO THIS IS SPEECH TO TEXT RECOGNITION FOR JOKER PROJECT 
 ```
-ouput also contains a lot of debug messages (ignore it).
+output also contains a lot of debug messages (ignore it).
 
 ## Provide your own audio (wav) file
 Record your file first with following command (works under Linux)
@@ -27,8 +27,7 @@ or you can prepare in.wav in any other software. File format: `16 bit, mono 1600
 
 now you can run docker container:
 ```
-docker build -t stt `pwd`/in:/opt/in .
-docker run -it stt
+docker run -it -v `pwd`/in:/opt/in stt
 ```
 
 (c) Abylay Ospan <aospan@jokersys.com>, 2017
